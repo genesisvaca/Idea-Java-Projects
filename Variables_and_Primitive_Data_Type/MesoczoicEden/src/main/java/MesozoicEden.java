@@ -1,3 +1,6 @@
+import java.time.LocalTime;
+import java.util.Scanner;
+
 public class MesozoicEden {
     public static void main (String[] args){
         // Tyrannosaurus Rex
@@ -9,6 +12,7 @@ public class MesozoicEden {
         int dinoAgeT = 78;
         String carnivore = "carnivore";
         String herbivore = "herbivore";
+        boolean feeding = true;
         Character tyrannosaurusRex = 't';
 
         // Erick food portion calculator
@@ -104,5 +108,116 @@ public class MesozoicEden {
         System.out.println("\t/////////////////////////////////////////////");
         System.out.println("\t|\t\t\t\t\t\tLeap year: " + leapYearCalculator + "\t|");
         System.out.println("\t/////////////////////////////////////////////");
+
+        // Conditional Statements
+        if(feeding == true){
+            System.out.println("Is carnivore.");
+        } else {
+            System.out.println("Is herbivore.");
+        }
+
+        System.out.println("Which dino are you interested in to know more about?");
+        System.out.println("1. Tyrannosaurus Rex");
+        System.out.println("2. Triceratops");
+        System.out.println("3. Velociraptor");
+        System.out.println("4. Brachiosaurus");
+        System.out.println("5. Stegosaurus");
+        Scanner sc = new Scanner(System.in);
+
+        String species = sc.next();
+
+        String housingSIze = "";
+
+        switch (species){
+            case "1":
+                System.out.println("Care Strategy:\n" +
+                        "Requires large territory, frequent meat-based feeding, and secure containment due to high aggression.\n" +
+                        "\n" +
+                        "Unique Behavior Trait:\n" +
+                        "Displays territorial roaring when it senses intruders nearby.\n" +
+                        "House: " + housingSIze);
+                break;
+            case "2":
+                System.out.println("Care Strategy:\n" +
+                        "Needs open grassland, daily supply of leafy greens, and mud pits to regulate body temperature.\n" +
+                        "\n" +
+                        "Unique Behavior Trait:\n" +
+                        "Uses its horns to play-fight with others in its group during social bonding.\n" +
+                        "House: " + housingSIze);
+                break;
+            case "3":
+                System.out.println("Care Strategy:\n" +
+                        "Must be kept in packs, requires mental stimulation and frequent obstacle courses to avoid boredom.\n" +
+                        "\n" +
+                        "Unique Behavior Trait:\n" +
+                        "Communicates using a complex set of chirps to coordinate with its group.\n" +
+                        "House: " + housingSIze);
+                break;
+
+            case "4":
+                System.out.println("Care Strategy:\n" +
+                        "Requires tall trees for feeding, ample space for movement, and constant water access.\n" +
+                        "\n" +
+                        "Unique Behavior Trait:\n" +
+                        "Emits low-frequency hums that can be felt through the ground when calming its young.\n" +
+                        "House: " + housingSIze);
+                break;
+            case "5":
+                System.out.println("Care Strategy:\n" +
+                        "Prefers shaded environments, soft ground for walking, and high-fiber vegetation.\n" +
+                        "\n" +
+                        "Unique Behavior Trait:\n" +
+                        "Uses its tail spikes to dig shallow trenches for cooling off in warm weather.\n" +
+                        "House: " + housingSIze);
+                break;
+        }
+
+        int yearsEmployeeExperience = 10;
+
+        if (yearsEmployeeExperience < 10){
+            System.out.println(employeeName + " doesn't have enough experience to take care of " + dinoName);
+        }
+
+        if (parkSafety <= 7 ){
+            System.out.println("¡¡¡WARNING THE SAFETY IN THE PARK IS TOO LOW!!!");
+        }
+
+        if (weight > 20000){
+            System.out.println("Needs 3 feeds");
+        }
+
+        // Switch to show employee duties
+        System.out.println("Select your role to know your duties:");
+        System.out.println("1. Paleontologist");
+        System.out.println("2. Veterinarian");
+        System.out.println("3. Security Guard");
+        System.out.println("4. Tour Guide");
+        System.out.println("1. Maintenance");
+        String duties = sc.next();
+
+        switch (duties){
+            case "Paleontologist":
+                System.out.println("Study dinosaur fossils and monitor species behavior.");
+            case "Veterinarian":
+                System.out.println("Check dinosaur health and provide medical care.");;
+            case "Security Guard":
+                System.out.println("Patrol the park and ensure dinosaurs stay in their enclosures.");
+            case "Tour Guide":
+                System.out.println("Lead visitors through exhibits and provide educational talks.");
+            case "Maintenance":
+                System.out.println("Repair fences, clean habitats, and maintain facilities.");
+            default:
+                System.out.println("General park support duties.");
+        }
+
+        // Statement that checks if the park is open
+        int hour = LocalTime.now().getHour();
+
+        if ( hour >= 10 && hour <= 19){
+            System.out.println("The park is open!");
+        } else {
+            System.out.println("The park is closed!");
+        }
+
     }
 }
